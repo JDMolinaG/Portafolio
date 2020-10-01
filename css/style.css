@@ -64,6 +64,7 @@ p {
     font-size: 1.8rem;
     font-weight: 300;
     margin: 0;
+    line-height: 1.5;
 }
 
 a {
@@ -71,9 +72,9 @@ a {
 }
 
 :root {
-    --color-amarillo: #ffe11b;
-    --color-cafe: #321906;
-    --color-gris: #8c8377;
+    --color-amarillo: #00adb5;
+    --color-cafe: #222831;
+    --color-gris: #393e46;
 }
 
 .hollow {
@@ -228,6 +229,8 @@ ul li a:hover {
 .sobre-mi h2 {
     text-transform: uppercase;
     color: var(--color-cafe);
+    font-weight: 300;
+    font-size: 5rem;
 }
 
 .info-sobre-mi {
@@ -237,28 +240,34 @@ ul li a:hover {
     grid-template-columns: repeat(1, 1fr);
 }
 
-@media (min-width:528px) {
+@media (min-width:689px) {
     .info-sobre-mi {
         display: grid;
         justify-content: center;
         align-items: center;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 .foto {
-    margin-top: 3rem;
+    margin-top: 6rem;
     border-radius: 50%;
+    position: relative;
 }
 
 .foto img {
-    width: 300px;
-    -webkit-filter: grayscale(1);
+    width: 350px;
     -webkit-transition: all .5s ease-in-out;
 }
 
+@media (min-width:689px) {
+    .foto img {
+        width: 400px;
+        -webkit-transition: all .5s ease-in-out;
+    }
+}
+
 .foto img:hover {
-    -webkit-filter: grayscale(0);
     -webkit-transform: scale(1.1);
 }
 
@@ -277,7 +286,8 @@ ul li a:hover {
 
 /* SKILL */
 
-.barra-skill {
+
+/* .barra-skill {
     text-align: left;
 }
 
@@ -312,10 +322,152 @@ ul li a:hover {
     right: 0;
     font-size: 1.4rem;
     font-weight: 700;
+} */
+
+
+/* tarjetas */
+
+.tarjetas-skill {
+    margin-top: 15rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-content: center;
+    row-gap: 3rem;
+}
+
+@media (min-width: 768px) {
+    .tarjetas-skill {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: flex-start;
+    }
+}
+
+.tarjeta {
+    max-width: 80%;
+    margin: 0 auto;
+    border: 1px solid #9797975d;
+    border-radius: 1rem;
+    -webkit-box-shadow: 0px 0px 17px 1px rgba(204, 204, 202, 0.89);
+    -moz-box-shadow: 0px 0px 17px 1px rgba(204, 204, 202, 0.89);
+    box-shadow: 0px 0px 17px 1px rgba(204, 204, 202, 0.89);
+}
+
+.tarjeta h4 {
+    font-size: 2.4rem;
+    margin: 1rem;
+}
+
+.tarjeta img {
+    width: 100%;
+}
+
+.barra {
+    background-color: var(--color-gris);
+    width: 100%;
+    height: 15px;
+    display: block;
+    border-radius: 3rem;
+    margin-bottom: 1rem;
+}
+
+.progreso-barra {
+    height: 100%;
+    width: 0%;
+    background-color: var(--color-amarillo);
+    border-radius: 3rem;
+    position: relative;
+    transition: all 1.5s;
+}
+
+.progreso-barra span {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.contenido-tarjeta {
+    padding: 2rem;
+}
+
+.contenido-tarjeta p {
+    font-size: 1.5rem;
+}
+
+
+/* footer */
+
+.site-footer {
+    background-color: var(--color-cafe);
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.site-footer i {
+    text-decoration: none;
+    color: var(--color-amarillo);
+    font-size: 2.5rem;
+    margin-right: 1rem;
+}
+
+.site-footer i:hover {
+    color: #ffffff;
+}
+
+.contacto p {
+    color: #ffffff;
+    margin: 0 2rem 0 0;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .info {
+        flex-direction: row;
+    }
+}
+
+.redes {
+    margin: 0 0 4rem 0;
+}
+
+.contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 
 /* musica */
+
+.hero {
+    background-image: url(../img/alcolirikoz3.jpg);
+    background-position: top;
+    background-size: cover;
+    max-width: 100%;
+    height: 25rem;
+}
+
+@media (min-width: 600px) {
+    .hero {
+        height: 60rem;
+    }
+}
+
+.musica h2 {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 300;
+    margin: 5rem;
+}
 
 .site-header-interna {
     background-color: var(--color-gris);
@@ -359,7 +511,7 @@ ul li a:hover {
 
 @media (min-width:768px) {
     .tarjetas {
-        width: 25%;
+        width: 37rem;
     }
 }
 
@@ -386,4 +538,33 @@ audio {
     font-weight: 300;
     margin: 1rem 0;
     color: var(--color-gris)
+}
+
+.musica .hollow {
+    color: var(--color-amarillo);
+    margin: 0 auto;
+    display: block;
+}
+
+.musica .hollow:hover {
+    color: var(--color-cafe);
+}
+
+#ocultar {
+    display: none;
+}
+
+.mostrarMas {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width:768px) {
+    .mostrarMas {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
 }

@@ -16,10 +16,13 @@ window.addEventListener('scroll', () => {
     let values = [
         '80%',
         '80%',
-        '40%',
         '30%',
-        '35%',
-        '20%'
+        '40%',
+        '60%',
+        '70%',
+        '50%',
+        '60%',
+        '80%'
     ];
     progresoBarra.forEach((progreso, index) => {
         progreso.style.width = values[index];
@@ -79,5 +82,55 @@ function depurarArtista(datos) {
     let audio3DOM = document.getElementById("audio3").src = datos.tracks[2].preview_url;
     let album3 = document.getElementById("album3").textContent = datos.tracks[2].album.name;
 
+    // card4
+    let imagen4DOM = document.getElementById("imagen4").src = datos.tracks[3].album.images[0].url;
+    let titulo4DOM = document.getElementById("titulo4").textContent = datos.tracks[3].name;
+    let audio4DOM = document.getElementById("audio4").src = datos.tracks[3].preview_url;
+    let album4 = document.getElementById("album4").textContent = datos.tracks[3].album.name;
 
+    // card5
+    let imagen5DOM = document.getElementById("imagen5").src = datos.tracks[4].album.images[0].url;
+    let titulo5DOM = document.getElementById("titulo5").textContent = datos.tracks[4].name;
+    let audio5DOM = document.getElementById("audio5").src = datos.tracks[4].preview_url;
+    let album5 = document.getElementById("album5").textContent = datos.tracks[4].album.name;
+
+    // card6
+    let imagen6DOM = document.getElementById("imagen6").src = datos.tracks[5].album.images[0].url;
+    let titulo6DOM = document.getElementById("titulo6").textContent = datos.tracks[5].name;
+    let audio6DOM = document.getElementById("audio6").src = datos.tracks[5].preview_url;
+    let album6 = document.getElementById("album6").textContent = datos.tracks[5].album.name;
+
+    // card7
+    let imagen7DOM = document.getElementById("imagen7").src = datos.tracks[6].album.images[0].url;
+    let titulo7DOM = document.getElementById("titulo7").textContent = datos.tracks[6].name;
+    let audio7DOM = document.getElementById("audio7").src = datos.tracks[6].preview_url;
+    let album7 = document.getElementById("album7").textContent = datos.tracks[6].album.name;
+
+    // card8
+    let imagen8DOM = document.getElementById("imagen8").src = datos.tracks[8].album.images[0].url;
+    let titulo8DOM = document.getElementById("titulo8").textContent = datos.tracks[8].name;
+    let audio8DOM = document.getElementById("audio8").src = datos.tracks[8].preview_url;
+    let album8 = document.getElementById("album8").textContent = datos.tracks[8].album.name;
+
+    // card8
+    let imagen9DOM = document.getElementById("imagen9").src = datos.tracks[9].album.images[0].url;
+    let titulo9DOM = document.getElementById("titulo9").textContent = datos.tracks[9].name;
+    let audio9DOM = document.getElementById("audio9").src = datos.tracks[9].preview_url;
+    let album9 = document.getElementById("album9").textContent = datos.tracks[9].album.name;
 }
+let click = 0;
+
+function ocultar() {
+    if (click == 0) {
+        let ocultar = document.getElementById('ocultar').style.display = "block";
+        mostrarmas.textContent = "Mostrar Menos"
+        click++;
+        location.href = "#ocultar";
+    } else {
+        let ocultar = document.getElementById('ocultar').style.display = "none";
+        mostrarmas.textContent = "Mostrar Mas"
+        click--;
+    }
+}
+const mostrarmas = document.getElementById('mostrar-mas');
+mostrarmas.addEventListener('click', ocultar, false);
